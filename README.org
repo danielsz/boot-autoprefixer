@@ -11,16 +11,14 @@ Boot task for [[https://github.com/postcss/autoprefixer][autoprefixer]].
 In *build.boot*, make sure to import the *autoprefixer* task:
 
 #+BEGIN_SRC clojure
-(set-env!
- :dependencies '[[danielsz/boot-autoprefixer "0.0.1"]])
+(set-env! :dependencies '[[danielsz/boot-autoprefixer "0.0.1"]])
 (require '[danielsz.autoprefixer :refer [autoprefixer]])
 #+END_SRC
 
 The autoprefixer task takes a vector of filenames, the CSS files you want to post-process with autoprefixer.
 
 #+BEGIN_SRC clojure
-(task-options!
- autoprefixer {:files ["style-1.css" "style-2.css"]})
+(task-options! autoprefixer {:files ["style-1.css" "style-2.css"]})
 #+END_SRC
 
 You’re all set!
