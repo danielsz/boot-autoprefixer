@@ -8,7 +8,9 @@ Boot task for [[https://github.com/postcss/autoprefixer][autoprefixer]].
 
 [[http://clojars.org/danielsz/boot-autoprefixer/latest-version.svg]]
 
-In *build.boot*, make sure to import the *autoprefixer* task:
+** Usage
+
+In *build.boot*,  import the *autoprefixer* task:
 
 #+BEGIN_SRC clojure
 (set-env! :dependencies '[[danielsz/boot-autoprefixer "0.0.1"]])
