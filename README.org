@@ -27,5 +27,4 @@ The autoprefixer task takes a vector of filenames, the CSS files you want to pos
 (task-options! autoprefixer {:files ["style-1.css" "style-2.css"]})
 #+END_SRC
 
-You’re all set!
-
+You can now compose *autoprefixer* in your boot pipeline like any other task.
