@@ -2,6 +2,10 @@
 
 Boot task for [[https://github.com/postcss/autoprefixer][autoprefixer]]. 
 
+#+BEGIN_QUOTE
+Autoprefixer utilizes the most recent data from Can I Use to add only necessary vendor prefixes.
+#+END_QUOTE
+
 ** Installation
 
 (Make sure autoprefixer is installed on your system).
