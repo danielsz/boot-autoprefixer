@@ -21,10 +21,7 @@
       (doseq [[in-path in-file file] (find-css-files fileset files)]
         (boot.util/info "Autoprefixing %s\n" (:path file))
         (let [out-file (doto (io/file tmp-dir in-path) io/make-parents)]
-          ; See https://github.com/boot-clj/boot/issues/141
-          (if browsers
-            (util/dosh "autoprefixer" (.getPath in-file) "-o" (.getPath out-file) "-b" browsers)
-            (util/dosh "autoprefixer" (.getPath in-file) "-o" (.getPath out-file)))))
+          (util/dosh "autoprefixer" (.getPath in-file) "-o" (.getPath out-file) (if browsers (str "-b" browsers)))))
       (-> fileset
           (core/add-resource tmp-dir)
           core/commit!))))
