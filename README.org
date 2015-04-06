@@ -17,7 +17,7 @@ Autoprefixer utilizes the most recent data from Can I Use to add only necessary 
 In *build.boot*,  import the *autoprefixer* task:
 
 #+BEGIN_SRC clojure
-(set-env! :dependencies '[[danielsz/boot-autoprefixer "0.0.1"]])
+(set-env! :dependencies '[[danielsz/boot-autoprefixer "0.0.2"]])
 (require '[danielsz.autoprefixer :refer [autoprefixer]])
 #+END_SRC
 
