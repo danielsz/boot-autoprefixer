@@ -11,7 +11,7 @@
   (->> fs
        core/input-files
        (core/by-name files)
-       (map (juxt core/tmppath core/tmpfile identity))))
+       (map (juxt core/tmp-path core/tmp-file identity))))
 
 (core/deftask autoprefixer
   [f files    FILES       [str] "A vector of filenames to process with autoprefixer."
