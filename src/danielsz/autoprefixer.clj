@@ -15,13 +15,19 @@
 
 (core/deftask autoprefixer
   [f files    FILES       [str] "A vector of filenames to process with autoprefixer."
-   b browsers BROWSERS    str   "A string describing browsers autoprefixer will target."]
+
+   b browsers BROWSERS    str   "A string describing browsers autoprefixer will target.
+   Eg:  \"last 1 version, > 5%\".
+   More details at https://github.com/ai/browserslist"]
   (let [tmp-dir (core/temp-dir!)]
     (core/with-pre-wrap fileset
       (doseq [[in-path in-file file] (find-css-files fileset files)]
         (boot.util/info "Autoprefixing %s\n" (:path file))
         (let [out-file (doto (io/file tmp-dir in-path) io/make-parents)]
-          (util/dosh "autoprefixer" (.getPath in-file) "-o" (.getPath out-file) (if browsers (str "-b" browsers)))))
+          (apply util/dosh "postcss" "--use" "autoprefixer"
+                 (.getPath in-file)
+                 "-o" (.getPath out-file)
+                 (when browsers ["--autoprefixer.browsers" browsers]))))
       (-> fileset
           (core/add-resource tmp-dir)
           core/commit!))))
