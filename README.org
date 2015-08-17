@@ -1,14 +1,19 @@
 * Boot-autoprefixer
 
-Boot task for [[https://github.com/postcss/autoprefixer][autoprefixer]]. 
+Boot task for [[https://github.com/postcss/autoprefixer][autoprefixer]].
 
 #+BEGIN_QUOTE
 Autoprefixer utilizes the most recent data from Can I Use to add only necessary vendor prefixes.
 #+END_QUOTE
 
-** Installation
+** Requirements
 
-(Make sure autoprefixer is installed on your system).
+Make sure postcss-cli and autoprefixer are installed on your system.
+#+BEGIN_SRC clojure
+npm install --global postcss-cli autoprefixer
+#+END_SRC
+
+** Installation
 
 [[http://clojars.org/danielsz/boot-autoprefixer/latest-version.svg]]
 
@@ -25,6 +30,14 @@ The autoprefixer task takes a vector of filenames, the CSS files you want to pos
 
 #+BEGIN_SRC clojure
 (task-options! autoprefixer {:files ["style-1.css" "style-2.css"]})
+#+END_SRC
+
+Autoprefixer uses [[https://github.com/ai/browserslist][Browserslist]], so you can specify the browsers you
+want to target in your project by queries like =last 2 versions= or => 5%=
+
+#+BEGIN_SRC clojure
+(task-options! autoprefixer {:files ["style-1.css" "style-2.css"]
+                             :browsers "last 2 versions"})
 #+END_SRC
 
 You can now compose *autoprefixer* in your boot pipeline like any other task.
