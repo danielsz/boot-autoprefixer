@@ -22,7 +22,7 @@ npm install --global postcss-cli autoprefixer
 In *build.boot*,  import the *autoprefixer* task:
 
 #+BEGIN_SRC clojure
-(set-env! :dependencies '[[danielsz/boot-autoprefixer "0.0.2"]])
+(set-env! :dependencies '[[danielsz/boot-autoprefixer "x.x.x"]]) ; latest release is indicated above 
 (require '[danielsz.autoprefixer :refer [autoprefixer]])
 #+END_SRC
 
