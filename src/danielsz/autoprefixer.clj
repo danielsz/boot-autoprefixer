@@ -19,7 +19,7 @@
    b browsers BROWSERS    str   "A string describing browsers autoprefixer will target.
    Eg:  \"last 1 version, > 5%\".
    More details at https://github.com/ai/browserslist"]
-  (let [tmp-dir (core/tmp-dir!)]
+  (let [tmp-dir (core/temp-dir!)]
     (core/with-pre-wrap fileset
       (doseq [[in-path in-file file] (find-css-files fileset files)]
         (boot.util/info "Autoprefixing %s\n" (:path file))
