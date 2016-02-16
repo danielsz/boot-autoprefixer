@@ -1,6 +1,6 @@
 (task-options!
  pom {:project 'danielsz/boot-autoprefixer
-      :version "0.0.5"
+      :version "0.5.1"
       :scm {:name "git"
             :url "https://github.com/danielsz/boot-autoprefixer"}})
 
