@@ -16,7 +16,7 @@ npm install --global postcss-cli autoprefixer
 ** Installation
 
 
-https://img.shields.io/clojars/v/danielsz/boot-autoprefixer.svg
+[[https://img.shields.io/clojars/v/danielsz/boot-autoprefixer.svg]]
 
 
 ** Usage
