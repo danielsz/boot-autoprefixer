@@ -42,3 +42,12 @@ want to target in your project by queries like =last 2 versions= or => 5%=
 #+END_SRC
 
 You can now compose *autoprefixer* in your boot pipeline like any other task.
+
+An alternate way of going about this is to forgo *task-options!* and instead use keyword arguments.
+
+#+BEGIN_SRC clojure
+(comp
+ (cljs :source-map true)
+ (autoprefixer :files ["style-1.css" "style-2.css"] 
+               :browsers "last 2 versions"))
+#+END_SRC
