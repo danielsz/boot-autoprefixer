@@ -4,7 +4,7 @@
 
 (task-options!
  pom {:project 'danielsz/boot-autoprefixer
-      :version "0.0.8"
+      :version "0.0.9"
       :scm {:name "git"
             :url "https://github.com/danielsz/boot-autoprefixer"}})
 
@@ -17,6 +17,3 @@
   (comp
    (build)
    (push :repo "clojars")))
-
-
-
