@@ -3,8 +3,9 @@
  :resource-paths #{"src"})
 
 (task-options!
+ push {:repo-map {:url "https://clojars.org/repo/"}}
  pom {:project 'danielsz/boot-autoprefixer
-      :version "0.0.9"
+      :version "0.1.0"
       :scm {:name "git"
             :url "https://github.com/danielsz/boot-autoprefixer"}})
 
@@ -16,4 +17,4 @@
   []
   (comp
    (build)
-   (push :repo "clojars")))
+   (push)))
