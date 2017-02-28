@@ -24,11 +24,12 @@
       (doseq [[in-path in-file file] (find-css-files fileset files)]
         (boot.util/info "Autoprefixing %s\n" (:path file))
         (let [out-file (doto (io/file tmp-dir in-path) io/make-parents)
-              postcss (or exec-path "postcss")]
+              postcss (or exec-path "postcss")
+              args    (if browsers ["--autoprefixer.browsers" browsers] [])
+              args    (into args ["--" (.getPath in-file)])]
           (apply util/dosh postcss "--use" "autoprefixer"
-                 (.getPath in-file)
                  "-o" (.getPath out-file)
-                 (when browsers ["--autoprefixer.browsers" browsers]))))
+                 args)))
       (-> fileset
           (core/add-resource tmp-dir)
           core/commit!))))
